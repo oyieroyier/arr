@@ -11,13 +11,13 @@
 			height: 400px;
 		}
 		.form {
-			position: relative;
 			display: flex;
-			flex-direction: column;
+			/* flex-direction: column; */
 			gap: 10px;
 			padding: 20px;
 			background: linear-gradient(to bottom, #0077be, #3b8df2);
 			border-radius: 10px;
+			width: fit-content;
 			overflow: hidden;
 			perspective: 1000px;
 			transform-style: preserve-3d;
@@ -86,19 +86,8 @@
 				rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
 				rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 		}
-
-		button:hover {
-			background-color: #0077be;
-			font-size: 17px;
-			transform: scale(1.05) rotateY(20deg) rotateX(10deg);
-			box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-				rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
-				rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-		}
 	</style>
 	<body>
-		<div class="header"></div>
-
 		<div class="second"></div>
 
 		<div class="form">
@@ -125,5 +114,6 @@
 				<button>Submit</button>
 			</form>
 		</div>
+		<div class="header"></div>
 	</body>
 </html>

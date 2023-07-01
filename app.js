@@ -2,17 +2,17 @@ const button = document.querySelector('button');
 const header = document.querySelector('.header');
 const form = document.querySelector('form');
 
-document.addEventListener('DOMContentLoaded', loadRandomDog);
+document.addEventListener('DOMContentLoaded', loadPersons);
 
-const randomDogURL = 'http://localhost:4000/persons';
+const personsURL = 'http://localhost:4000/persons';
 
-function loadRandomDog() {
-	fetch(randomDogURL)
+function loadPersons() {
+	fetch(personsURL)
 		.then((res) => res.json())
-		.then(renderRandomDog);
+		.then(renderPersons);
 }
 
-function renderRandomDog(people) {
+function renderPersons(people) {
 	people.forEach((person) => {
 		const h1 = document.createElement('h1');
 		h1.innerText = person.name;
@@ -41,9 +41,14 @@ function addANewname(e) {
 		email: email.value,
 	};
 
-	fetch(randomDogURL, {
+	fetch(personsURL, {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
 		body: JSON.stringify(newPerson),
+	}).then(() => {
+		name.value = '';
+		username.value = '';
+		email.value = '';
+		document.location.reload();
 	});
 }
